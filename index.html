@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WELSTRACK | Universal Vehicle Tracking</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #081426;
+      color: white;
+    }
+    header {
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #263750;
+    }
+    .logo { font-size: 25px; font-weight: bold; color: #38d9a9; }
+    .hero {
+      text-align: center;
+      padding: 75px 20px;
+    }
+    h1 { font-size: 38px; }
+    .hero p { color: #b8c5d6; line-height: 1.7; }
+    .search {
+      max-width: 450px;
+      margin: 30px auto;
+      display: flex;
+      gap: 8px;
+    }
+    input {
+      min-width: 0;
+      flex: 1;
+      padding: 15px;
+      border-radius: 8px;
+      border: 0;
+    }
+    button {
+      padding: 15px 20px;
+      background: #38d9a9;
+      color: #081426;
+      border: 0;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .features {
+      padding: 25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 15px;
+    }
+    .feature {
+      background: #12243c;
+      padding: 25px;
+      border-radius: 12px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #9aabc0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">WELSTRACK</div>
+    <div>Vehicle Tracking</div>
+  </header>
+
+  <section class="hero">
+    <h1>Track Any Vehicle. Anywhere.</h1>
+    <p>One platform for school buses, cars, bikes, taxis,<br>
+    trucks and transport fleets.</p>
+
+    <div class="search">
+      <input id="trackingId" placeholder="Enter Vehicle Tracking ID">
+      <button onclick="trackVehicle()">Track</button>
+    </div>
+    <p id="message"></p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>🚌 School Transport</h3>
+      <p>Connect parents with authorized school vehicles.</p>
+    </div>
+    <div class="feature">
+      <h3>🚕 Personal Vehicles</h3>
+      <p>Manage and track your registered vehicles.</p>
+    </div>
+    <div class="feature">
+      <h3>🚚 Fleet Management</h3>
+      <p>A single platform for multiple vehicles.</p>
+    </div>
+  </section>
+
+  <footer>© 2026 WELSTRACK. All rights reserved.</footer>
+
+  <script>
+    function trackVehicle() {
+      const id = document.getElementById("trackingId").value.trim();
+      document.getElementById("message").textContent =
+        id ? "Tracking ID entered: " + id +
+        ". Access verification will be available soon." :
+        "Please enter a Tracking ID.";
+    }
+  </script>
+</body>
+</html>
